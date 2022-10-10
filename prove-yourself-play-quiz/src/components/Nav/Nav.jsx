@@ -1,5 +1,6 @@
 import React from 'react';
 import './Nav.css';
+import { Link } from "react-router-dom";
 const Nav = () => {
     return (
         <nav>
@@ -9,9 +10,10 @@ const Nav = () => {
                 </div>
                 <div id="nav-item" className="flex-none">
                     <ul className="menu menu-horizontal p-0 text-lg">
-                    <li><a>Topics</a></li>
-                    <li><a>Statistics</a></li>
-                    <li><a>Blogs</a></li>
+                    <li><Link to = '/'>Home</Link></li>
+                    <li><Link to ='/Topics'>Topics</Link></li>
+                    <li><Link to ='/Statistics'>Statistics</Link></li>
+                    <li><Link to ='/Blogs'>Blogs</Link></li>
                     </ul>
                 </div>
             </div>
