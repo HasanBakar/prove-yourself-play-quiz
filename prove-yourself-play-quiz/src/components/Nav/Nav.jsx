@@ -9,7 +9,7 @@ const Nav = () => {
                     <h2 className="btn btn-ghost normal-case text-4xl">Prove Yourself</h2>
                 </div>
                 <div id="nav-item" className="flex-none">
-                    <ul className="menu menu-horizontal p-0 text-lg">
+                    <ul className="menu menu-horizontal p-0 text-lg font-semibold">
                     <li><Link to = '/'>Home</Link></li>
                     <li><Link to ='/Topics'>Topics</Link></li>
                     <li><Link to ='/Statistics'>Statistics</Link></li>
