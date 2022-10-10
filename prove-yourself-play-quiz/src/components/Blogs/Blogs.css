@@ -1,0 +1,15 @@
+@media (max-width:992px) {
+    #blogs-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 30px;
+    }
+}
+
+@media (max-width:576px) {
+    #blogs-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 16px;
+    }
+}
