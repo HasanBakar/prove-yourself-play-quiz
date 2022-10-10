@@ -1,0 +1,19 @@
+@media (max-width:992px) {
+    #topics-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 30px;
+    }
+}
+
+@media (max-width:576px) {
+    #topics-item {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin: 16px;
+    }
+
+    #topics-item img {
+        width: 140px;
+    }
+}

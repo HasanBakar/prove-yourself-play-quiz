@@ -1,9 +1,18 @@
 import React from 'react';
-
+import { useLoaderData } from "react-router-dom";
+import Topic from './../Topic/Topic';
+import './Topics.css';
 const Topics = () => {
+    const quizTopics = useLoaderData();
+    const {data} = quizTopics;
+    
     return (
-        <div>
-            <h1>Hello I am from Topics component.</h1>
+        <div id="topics-item" className="grid grid-cols-2 gap-5">
+            {
+                data.map(topic => <Topic
+                key ={topic.id}    
+                topic ={topic}></Topic>)
+            }
         </div>
     );
 };
