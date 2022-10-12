@@ -23,9 +23,10 @@ const Question = ({q}) => {
       const matchAnsHandle = (answer) =>{
         const yAnswerElement = document.getElementById(answer);
         const yAnswer = yAnswerElement.innerText;
+        console.log(correctAnswer);
         if(yAnswer === correctAnswer){
-            
-                toast.success(`Right Answer: ${correctAnswer}`, {
+            console.log(correctAnswer);
+             toast.success(`Right Answer: ${correctAnswer}`, {
                     position: "top-center",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -35,10 +36,13 @@ const Question = ({q}) => {
                     progress: undefined,
                     theme: "light",
                     });
-        }
-        else{
+            
 
-         toast.error( `WRONG AnSwEr: ${yAnswer}`, {
+        }
+        else{       
+
+             console.log(yAnswer);
+                     toast.error( `WRONG AnSwEr: ${yAnswer}`, {
                         position: "top-center",
                         autoClose: 5000,
                         hideProgressBar: false,
