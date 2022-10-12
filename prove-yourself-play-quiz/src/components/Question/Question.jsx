@@ -6,8 +6,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Question = ({q}) => {
     const {question,options,correctAnswer} = q;
+
     const notify = () => {
-        toast.success(`Answer: ${correctAnswer}`, {
+        toast.info(`Answer: ${correctAnswer}`, {
             position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -17,7 +18,38 @@ const Question = ({q}) => {
             progress: undefined,
             theme: "light",
             });
-      }
+      };
+
+      const matchAnsHandle = (answer) =>{
+        const yAnswerElement = document.getElementById(answer);
+        const yAnswer = yAnswerElement.innerText;
+        if(yAnswer === correctAnswer){
+            
+                toast.success(`Right Answer: ${correctAnswer}`, {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+        }
+        else{
+
+         toast.error( `WRONG AnSwEr: ${yAnswer}`, {
+                        position: "top-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
+        }
+      };
 
     return (
         <div>
@@ -30,13 +62,14 @@ const Question = ({q}) => {
                         options.map((alternate, index) => <Options
                         key={index}
                         alternate={alternate}
+                        matchAnsHandle={matchAnsHandle}
                         ></Options>)
                     }
                     </div>
                </div>
                 <div className="flex items-center">
-                    <p>Click for help:</p>
-                    <EyeIcon onClick={notify} className="h-8 w-8 ml-1 text-green-500"/>
+                    <p className=" text-cyan-600 font-semibold">Click for help:</p>
+                    <EyeIcon onClick={notify} className="h-8 w-8 ml-1 text-cyan-600"/>
                     <ToastContainer></ToastContainer>
                 </div>
             </div>
